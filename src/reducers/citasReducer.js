@@ -9,6 +9,12 @@ export  default function (state = initialState, action) {
                 ...state,
                 citas:[...state.citas,  action.payload]
             }
+
+        case 'BORRAR_CITA':
+            return  {
+                ...state,
+                citas:  state.citas.filter(cita=>cita.id !== action.payload) 
+            }    
             
     
         default:
